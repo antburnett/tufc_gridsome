@@ -9,22 +9,22 @@ const axios = require('axios');
 
 module.exports = function(api) {
   // Use the Data Store API here: https://gridsome.org/docs/data-store-api
-  api.loadSource(async actions => {
-    const { data } = await axios.get('http://127.0.0.1:3000/v1/nearest/atm/151%2C-33%2C4326?geom_column=geom&columns=*&limit=10');
+  // api.loadSource(async actions => {
+  //   const { data } = await axios.get('http://127.0.0.1:3000/v1/nearest/atm/151%2C-33%2C4326?geom_column=geom&columns=*&limit=10');
 
-    const collection = actions.addCollection({
-      typeName: 'Location'
-    });
+  //   const collection = actions.addCollection({
+  //     typeName: 'Location'
+  //   });
 
-    for (const location of data) {
-      collection.addNode({
-        id: location.id,
-        name: location.name,
-        fulladdress: location.fulladdress,
-        distance: location.distance
-      });
-    }
-  });
+  //   for (const location of data) {
+  //     collection.addNode({
+  //       id: location.id,
+  //       name: location.name,
+  //       fulladdress: location.fulladdress,
+  //       distance: location.distance
+  //     });
+  //   }
+  // });
 
   // api.loadSource(({ addSchemaResolvers }) => {
   //   addSchemaResolvers({
